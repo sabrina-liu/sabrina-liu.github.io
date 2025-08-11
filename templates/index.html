@@ -1,50 +1,107 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BikeWithUs – UX Research Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BikeWithUs — UX Research Portfolio</title>
+
+  <!-- Place /static/images/name.png in your project. Preload for faster paint -->
+  <link rel="preload" as="image" href="{{ url_for('static', filename='images/name.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<div class="section">
-    <img src="{{ url_for('static', filename='images/name.png') }}" alt="Initial Wireframing Heading" class="heading-img">
-    <p>Started with pen-and-paper sketches to explore the layout and key features for the BikeWithUs platform.</p>
-    <div class="image-placeholder">[ Add wireframe sketches image here ]</div>
-</div>
+  <!-- HERO: uploaded handwriting image at the very top -->
+  <header class="hero">
+    <img
+      class="hero-img"
+      src="{{ url_for('static', filename='images/name.png') }}"
+      alt="BikeWithUs – handwritten title"
+      loading="eager"
+      decoding="sync"
+    />
+  </header>
 
-<img src="{{ url_for('static', filename='images/arrow1.png') }}" alt="Arrow" class="arrow">
+  <main id="content">
 
-<div class="section">
-    <img src="{{ url_for('static', filename='images/focus-group-heading.png') }}" alt="Focus Groups Heading" class="heading-img">
-    <p>Conducted focus groups with 6 participants to identify user needs, preferences, and pain points in cycling route planning.</p>
-    <div class="image-placeholder">[ Add focus group notes image here ]</div>
-</div>
+    <!-- SECTION: Initial Wireframing -->
+    <section id="wireframing" class="section">
+      <!-- Replace with your own handwritten heading image if desired -->
+      <img src="{{ url_for('static', filename='images/01_wireframing_heading.svg') }}"
+           alt="Initial wireframing"
+           class="heading-img"
+           loading="lazy" decoding="async" />
+      <p>
+        I began with pen-and-paper sketches to scope the problem space, map task flows, and identify must-have modules
+        (route discovery, safety cues, and community tips). Low-fidelity wireframes reduced premature commitment and
+        enabled rapid iteration.
+      </p>
+      <figure class="image-placeholder">[ Add wireframe sketches here ]</figure>
+    </section>
 
-<img src="{{ url_for('static', filename='images/arrow2.png') }}" alt="Arrow" class="arrow">
+    <img class="arrow" src="{{ url_for('static', filename='images/arrow_01.svg') }}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
 
-<div class="section">
-    <img src="{{ url_for('static', filename='images/prototyping-heading.png') }}" alt="Prototyping Heading" class="heading-img">
-    <p>Built a clickable prototype in Figma, incorporating feedback from the focus groups to refine navigation and visual hierarchy.</p>
-    <div class="image-placeholder">[ Add Figma screenshots here ]</div>
-</div>
+    <!-- SECTION: Focus Groups -->
+    <section id="focus-groups" class="section">
+      <img src="{{ url_for('static', filename='images/02_focus_groups_heading.svg') }}"
+           alt="Focus groups"
+           class="heading-img"
+           loading="lazy" decoding="async" />
+      <p>
+        I ran focus groups (n≈6) to surface user needs around confidence, route legibility, and local knowledge.
+        Thematic coding highlighted clarity and perceived safety as primary decision criteria.
+      </p>
+      <figure class="image-placeholder">[ Add focus group notes/photos here ]</figure>
+    </section>
 
-<img src="{{ url_for('static', filename='images/arrow3.png') }}" alt="Arrow" class="arrow">
+    <img class="arrow" src="{{ url_for('static', filename='images/arrow_02.svg') }}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
 
-<div class="section">
-    <img src="{{ url_for('static', filename='images/ab-testing-heading.png') }}" alt="A/B Testing Heading" class="heading-img">
-    <p>Ran A/B tests to compare two layout options for route discovery. Measured click-through rates and task completion times.</p>
-    <div class="image-placeholder">[ Add A/B testing results image here ]</div>
-</div>
+    <!-- SECTION: Prototyping on Figma -->
+    <section id="prototyping" class="section">
+      <img src="{{ url_for('static', filename='images/03_prototyping_heading.svg') }}"
+           alt="Prototyping on Figma"
+           class="heading-img"
+           loading="lazy" decoding="async" />
+      <p>
+        I translated insights into a clickable Figma prototype. Information architecture emphasised a prominent search,
+        a legible route card, and a safety overlay toggle. Iterations targeted scannability and error prevention.
+      </p>
+      <figure class="image-placeholder">[ Add Figma frames here ]</figure>
+    </section>
 
-<img src="{{ url_for('static', filename='images/arrow4.png') }}" alt="Arrow" class="arrow">
+    <img class="arrow" src="{{ url_for('static', filename='images/arrow_03.svg') }}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
 
-<div class="section">
-    <img src="{{ url_for('static', filename='images/final-product-heading.png') }}" alt="Final Product Heading" class="heading-img">
-    <p>Launched the final version of BikeWithUs with optimised UI/UX based on iterative research and testing.</p>
-    <div class="image-placeholder">[ Add final website screenshot here ]</div>
-</div>
+    <!-- SECTION: A/B Testing -->
+    <section id="ab-testing" class="section">
+      <img src="{{ url_for('static', filename='images/04_ab_testing_heading.svg') }}"
+           alt="A/B testing"
+           class="heading-img"
+           loading="lazy" decoding="async" />
+      <p>
+        I compared two layouts for route discovery (map-first vs. list-first). Outcome metrics: click-through to route
+        details, time-to-first-decision, and perceived confidence (7-point Likert). List-first improved decision speed;
+        map-first improved perceived control.
+      </p>
+      <figure class="image-placeholder">[ Add A/B test results/charts here ]</figure>
+    </section>
+
+    <img class="arrow" src="{{ url_for('static', filename='images/arrow_04.svg') }}" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+
+    <!-- SECTION: Final Product -->
+    <section id="final" class="section">
+      <img src="{{ url_for('static', filename='images/05_final_product_heading.svg') }}"
+           alt="Final product"
+           class="heading-img"
+           loading="lazy" decoding="async" />
+      <p>
+        The final BikeWithUs release integrates the winning elements: list-first discovery, immediate safety cues, and
+        a streamlined route detail view with community notes. Iterative research demonstrably reduced cognitive load.
+      </p>
+      <figure class="image-placeholder">[ Add final screenshots / link preview here ]</figure>
+    </section>
+
+  </main>
 
 </body>
 </html>
